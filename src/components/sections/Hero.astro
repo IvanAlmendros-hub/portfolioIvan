@@ -1,0 +1,47 @@
+---
+import Download from "@/icons/Download.astro";
+import Github from "@/icons/Github.astro";
+import Globe from "@/icons/Globe.astro";
+import LinkedIn from "@/icons/LinkedIn.astro";
+import Mail from "@/icons/Mail.astro";
+
+import ProfilePicture from "@/components/images/ProfilePicture.astro";
+---
+
+<article class="w-full h-52 flex flex-wrap justify-between">
+  <div class="h-full p-0 m-0 flex flex-col text justify-between">
+    <div>
+      <h1 class="text-3xl text-magenta font-bold">Ivan Almendros Lozano</h1>
+      <h2 class="mt-6 text-xl font-bold">Programador Full-Stack</h2>
+      <span class="flex gap-1 items-center text-sm">
+        <Globe />
+        Madrid, España
+      </span>
+      <span class="flex gap-1 items-center text-sm">
+        <Globe />
+        ivan.almendros.lozano@gmail.com
+      </span>
+      
+    </div>
+
+    <div class="flex flex-row h-full items-end gap-6">
+      <a href="">
+        <Mail />
+      </a>
+      <a href="">
+        <Github />
+      </a>
+      <a href="">
+        <LinkedIn />
+      </a>
+    </div>
+  </div>
+
+  <div class="h-full">
+    <ProfilePicture />
+
+    <span class="flex justify-center p-2 text-sky-700">
+      <a class="flex text-[#560000] items-start" href="#">Descargar CV <Download /></a>
+    </span>
+  </div>
+</article>
