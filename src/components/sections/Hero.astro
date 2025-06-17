@@ -17,23 +17,16 @@ import ProfilePicture from "@/components/images/ProfilePicture.astro";
         <Globe />
         Madrid, España
       </span>
-      <span class="flex gap-1 items-center text-sm">
-        <Globe />
-        ivan.almendros.lozano@gmail.com
-      </span>
-      
     </div>
 
-    <div class="flex flex-row h-full items-end gap-6">
-      <a href="">
-        <Mail />
-      </a>
+    <div class="flex flex-row h-full items-end gap-6 ">
       <a href="">
         <Github />
       </a>
       <a href="">
         <LinkedIn />
       </a>
+      <Mail />
     </div>
   </div>
 
@@ -41,7 +34,9 @@ import ProfilePicture from "@/components/images/ProfilePicture.astro";
     <ProfilePicture />
 
     <span class="flex justify-center p-2 text-sky-700">
-      <a class="flex text-[#560000] items-start" href="#">Descargar CV <Download /></a>
+      <a class="flex text-[#560000] items-center hover:scale-110 transition duration-200" href="#"
+        >Descargar <Download /></a
+      >
     </span>
   </div>
 </article>

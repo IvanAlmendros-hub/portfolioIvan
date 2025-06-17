@@ -1,0 +1,110 @@
+---
+import HtmlIcon from "@/icons/HTMLIcon.astro";
+import CSSIcon from "@/icons/CSSIcon.astro";
+import NETIcon from "@/icons/NETIcon.astro";
+import JavaScriptIcon from "@/icons/JavaScriptIcon.astro";
+import UnityIcon from "@/icons/UnityIcon.astro";
+import CSharpIcon from "@/icons/CSharpIcon.astro";
+import Github_SinBorde from "@/icons/Github_SinBorde.astro";
+
+const TAGS = {
+  HTML: {
+    name: "HTML",
+    class: "bg-[#e65100]/60",
+    icon: HtmlIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#0096dc]/60",
+    icon: CSSIcon,
+  },
+  NET: {
+    name: "NET",
+    class: "bg-[#512bd4]/60",
+    icon: NETIcon,
+  },
+  JavaScript: {
+    name: "JavaScript",
+    class: "bg-[#f7df1e]/60",
+    icon: JavaScriptIcon,
+  },
+  Unity: {
+    name: "Unity",
+    class: "bg-[#808080]/60",
+    icon: UnityIcon,
+  },
+  CSharp: {
+    name: "C#",
+    class: "bg-[#a179dc]/60",
+    icon: CSharpIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Pasteleria Inbay TFG",
+    description: "Sitio web corportativo para Pastelería Artesanal",
+    link: "https://proyectopasteleriainbay.bsite.net/",
+    github: "https://github.com/IviCracker/TFG_Pasteleria_Inbay",
+    image: "../images/ProjectInbay.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.NET, TAGS.JavaScript, TAGS.CSharp],
+  },
+  {
+    title: "Juego de Plataformas en Unity",
+    description: "Videojuego de género simulador para aprender a conducir",
+    link: "https://itch.io/dashboard",
+    github: "https://github.com/IviCracker/Traffic_Simulator",
+    image: "../images/ProjectUnity.webp",
+    tags: [TAGS.Unity, TAGS.CSharp],
+  },
+  
+];
+---
+
+<h2 class="text-2xl text-[#A63446] w-full font-bold mt-14 mb-4">PROYECTOS</h2>
+<article
+  class="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 gap-6 justify-between"
+>
+  {
+    PROJECTS.map(({ title, description, link, github, image, tags }) => (
+      <section class="w-full border-2 border-[#560000] rounded-xl ">
+        <figure class="border-b-2 border-[#560000]">
+          <img
+            class="w-full rounded-tr-lg rounded-tl-lg"
+            src="src/components/images/ProjectInbay.webp"
+            alt="Captura de la web de la pasteleria"
+          />
+        </figure>
+        <div class="w-full">
+          <h3 class=" pl-5 pt-2 font-black text-2xl">{title}</h3>
+          <p class="pl-5 pt-2 ">{description}</p>
+
+          <ul class="flex flex-wrap flex-row content-end gap-1 w-full justify-center mt-6 mb-4">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex items-center rounded-full inset-shadow-sm px-2 py-1 gap-x-2 text-xs ${tag.class}`}
+                >
+                  <tag.icon />
+                  <p class="pt-1">{tag.name}</p>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <ul class="flex flex-wrap w-full border-t-2 divide-dashed border-[#560000]">
+          <li class="w-1/2 px-3 py-2 flex items-center justify-center gap-4 border-r-2 border-[#560000] hover:scale-105 transition duration-200">
+            <a href={github}>Ir al Github</a>
+            <Github_SinBorde />
+          </li>
+          <li class="w-1/2 px-3 py-2 flex items-center justify-center gap-4 hover:scale-105 transition duration-200">
+            <a href={link}>
+              <span class="">Ir a la Web</span>
+            </a>
+            <Github_SinBorde />
+          </li>
+        </ul>
+      </section>
+    ))
+  }
+</article>
