@@ -5,8 +5,6 @@ import Globe from "@/icons/Globe.astro";
 import LinkedIn from "@/icons/LinkedIn.astro";
 import Mail from "@/icons/Mail.astro";
 
-import ProfilePicture from "public/images/ProfilePicture.astro";
-
 const transitionClass = "hover:scale-110 transition duration-200";
 ---
 
@@ -26,10 +24,10 @@ const transitionClass = "hover:scale-110 transition duration-200";
       <div
         class="h-full mb-0 mt-4 pb-4 flex flex-wrap justify-center gap-2 items-end md:justify-start md:flex-nowrap"
       >
-        <a href="https://github.com/IviCracker">
+        <a href="https://github.com/IviCracker" target="_blank">
           <Github />
         </a>
-        <a href="https://www.linkedin.com/in/ivan-almendros-lozano/">
+        <a href="https://www.linkedin.com/in/ivan-almendros-lozano/" target="_blank">
           <LinkedIn />
         </a>
 
@@ -39,12 +37,19 @@ const transitionClass = "hover:scale-110 transition duration-200";
   </div>
 
   <div class="order-1 md:order-2 m-auto md:mr-0">
-    <ProfilePicture />
+    <figure>
+      <img
+        class="rounded-2xl shadow-2xs w-44"
+        src="/images/ProfileIvan.webp"
+        alt="Imagen perfil"
+      />
+    </figure>
 
     <span class="flex justify-center p-2 text-sky-700">
       <a
         class={`flex text-sm text-[#560000] items-center ${transitionClass}`}
-        href="/docs/CV_IvanAlmendrosLozano.pdf" download>Descargar <Download /></a
+        href="/docs/CV_IvanAlmendrosLozano.pdf"
+        download>Descargar <Download /></a
       >
     </span>
   </div>
