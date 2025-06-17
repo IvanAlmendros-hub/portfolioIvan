@@ -12,46 +12,58 @@
     <title>Portfolio Ivan Almendros</title>
   </head>
   <body>
-    <slot />
+    <main class="p-[16px] m-auto md:p-[4rem] ">
+      <slot />
+    </main>
   </body>
 </html>
 
 <style is:global>
   @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');  @theme {
+  @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
+  @theme {
     --color-magenta: #c44536;
   }
-.courier-prime-regular {
-  font-family: "Courier Prime", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
+  @theme {
+    --breakpoint-xs: 44rem;
+    --breakpoint-2xl: 100rem;
+    --breakpoint-3xl: 120rem;
+  }
+  .courier-prime-regular {
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
 
-.courier-prime-bold {
-  font-family: "Courier Prime", monospace;
-  font-weight: 700;
-  font-style: normal;
-}
+  .courier-prime-bold {
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    font-style: normal;
+  }
 
-.courier-prime-regular-italic {
-  font-family: "Courier Prime", monospace;
-  font-weight: 400;
-  font-style: italic;
-}
+  .courier-prime-regular-italic {
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: italic;
+  }
 
-.courier-prime-bold-italic {
-  font-family: "Courier Prime", monospace;
-  font-weight: 700;
-  font-style: italic;
-}
+  .courier-prime-bold-italic {
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    font-style: italic;
+  }
 
   html,
   body {
     background-color: #fbfef9;
-    font-family: 'Courier Prime' ;
+    font-family: "Courier Prime";
     font-weight: 500;
-    padding:100px;
     width: 100%;
     height: 100%;
+  }
+
+  article{
+    max-width: 900px;
+    margin: 0 auto 48px;
   }
 </style>

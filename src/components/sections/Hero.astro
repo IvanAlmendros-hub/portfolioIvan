@@ -6,36 +6,45 @@ import LinkedIn from "@/icons/LinkedIn.astro";
 import Mail from "@/icons/Mail.astro";
 
 import ProfilePicture from "@/components/images/ProfilePicture.astro";
+
+const transitionClass = "hover:scale-110 transition duration-200";
 ---
 
-<article class="w-full h-52 flex flex-wrap justify-between">
-  <div class="h-full p-0 m-0 flex flex-col text justify-between">
-    <div>
+<article
+  class="w-full h-full grid grid-cols-1 md:grid-cols-2 md:justify-between"
+>
+  <div class="order-2 text-center md:order-1 md:text-start">
+    <div class="flex flex-col justify-stretch h-full">
       <h1 class="text-3xl text-magenta font-bold">Ivan Almendros Lozano</h1>
       <h2 class="mt-6 text-xl font-bold">Programador Full-Stack</h2>
-      <span class="flex gap-1 items-center text-sm">
+      <span
+        class="flex gap-2 items-center justify-center text-sm md:justify-start"
+      >
         <Globe />
         Madrid, España
       </span>
-    </div>
+      <div
+        class="h-full mb-0 mt-4 pb-4 flex flex-wrap justify-center gap-2 items-end md:justify-start md:flex-nowrap"
+      >
+        <a href="">
+          <Github />
+        </a>
+        <a href="">
+          <LinkedIn />
+        </a>
 
-    <div class="flex flex-row h-full items-end gap-6 ">
-      <a href="">
-        <Github />
-      </a>
-      <a href="">
-        <LinkedIn />
-      </a>
-      <Mail />
+        <Mail />
+      </div>
     </div>
   </div>
 
-  <div class="h-full">
+  <div class="order-1 md:order-2 m-auto md:mr-0">
     <ProfilePicture />
 
     <span class="flex justify-center p-2 text-sky-700">
-      <a class="flex text-[#560000] items-center hover:scale-110 transition duration-200" href="#"
-        >Descargar <Download /></a
+      <a
+        class={`flex text-sm text-[#560000] items-center ${transitionClass}`}
+        href="#">Descargar <Download /></a
       >
     </span>
   </div>

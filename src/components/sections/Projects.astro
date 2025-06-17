@@ -1,11 +1,15 @@
 ---
-import HtmlIcon from "@/icons/HTMLIcon.astro";
-import CSSIcon from "@/icons/CSSIcon.astro";
-import NETIcon from "@/icons/NETIcon.astro";
-import JavaScriptIcon from "@/icons/JavaScriptIcon.astro";
-import UnityIcon from "@/icons/UnityIcon.astro";
+import ArrowUpRight from "@/icons/ArrowUpRight.astro";
 import CSharpIcon from "@/icons/CSharpIcon.astro";
+import CSSIcon from "@/icons/CSSIcon.astro";
 import Github_SinBorde from "@/icons/Github_SinBorde.astro";
+import HtmlIcon from "@/icons/HTMLIcon.astro";
+import JavaScriptIcon from "@/icons/JavaScriptIcon.astro";
+import NETIcon from "@/icons/NETIcon.astro";
+import UnityIcon from "@/icons/UnityIcon.astro";
+import AstroIcon from "@/icons/AstroIcon.astro";
+import TailwindIcon from "@/icons/TailwindIcon.astro";
+
 
 const TAGS = {
   HTML: {
@@ -19,7 +23,7 @@ const TAGS = {
     icon: CSSIcon,
   },
   NET: {
-    name: "NET",
+    name: "ASP.NET",
     class: "bg-[#512bd4]/60",
     icon: NETIcon,
   },
@@ -38,52 +42,79 @@ const TAGS = {
     class: "bg-[#a179dc]/60",
     icon: CSharpIcon,
   },
+   Astro: {
+    name: "Astro",
+    class: "bg-[#ff5d01]/50",
+    icon: AstroIcon, // Asegúrate de tener AstroIcon importado
+  },
+  Tailwind: {
+    name: "Tailwind CSS",
+    class: "bg-[#38bdf8]/60",
+    icon: TailwindIcon, // Asegúrate de tener TailwindIcon importado
+  },
 };
 
 const PROJECTS = [
   {
-    title: "Pasteleria Inbay TFG",
-    description: "Sitio web corportativo para Pastelería Artesanal",
+    title: "Pastelería Inbay TFG",
+    description:
+      "Desarrollo de un sitio web corporativo para una pastelería artesanal, con información sobre productos, servicios y contacto. Proyecto de fin de grado de DAW orientado a clientes reales.",
     link: "https://proyectopasteleriainbay.bsite.net/",
     github: "https://github.com/IviCracker/TFG_Pasteleria_Inbay",
-    image: "../images/ProjectInbay.webp",
+    image: "src/components/images/ProjectInbay.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.NET, TAGS.JavaScript, TAGS.CSharp],
   },
   {
-    title: "Juego de Plataformas en Unity",
-    description: "Videojuego de género simulador para aprender a conducir",
+    title: "Traffic Simulator TFG",
+    description:
+      "Simulador de tráfico en formato videojuego, diseñado para ayudar a usuarios a familiarizarse con las normas de conducción. Desarrollado en Unity como proyecto de fin de grado de DAM.",
     link: "https://itch.io/dashboard",
     github: "https://github.com/IviCracker/Traffic_Simulator",
-    image: "../images/ProjectUnity.webp",
+    image: "src/components/images/ProyectoTrafficSim.webp",
     tags: [TAGS.Unity, TAGS.CSharp],
   },
-  
+  {
+    title: "Biblioteca League Of Legends",
+    description:
+      "Aplicación web que muestra información detallada de todos los campeones del juego utilizando una API externa. Proyecto enfocado al aprendizaje e integración de APIs REST.",
+    link: "https://proyectopasteleriainbay.bsite.net/",
+    github: "https://github.com/IviCracker/LeagueOfLegendsLibrary",
+    image: "src/components/images/ProyectoBibliotecaLOL.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
+  },
+  {
+  title: "Mi Portfolio",
+  description:
+    "Sitio web personal desarrollado con Astro y Tailwind CSS. Presenta proyectos destacados con un diseño responsive y optimizado para rendimiento. Enfocado en la experiencia de usuario y buenas prácticas de desarrollo frontend.",
+  link: "https://tu-enlace.com",
+  github: "https://github.com/IviCracker/MiPortfolio",
+  image: "src/components/images/PortfolioImg.webp",
+  tags: [TAGS.Astro, TAGS.Tailwind],
+}
 ];
 ---
 
-<h2 class="text-2xl text-[#A63446] w-full font-bold mt-14 mb-4">PROYECTOS</h2>
-<article
-  class="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 gap-6 justify-between"
->
+<h2 class="text-2xl text-[#A63446] w-full font-bold mt-14  max-w-[900px] mx-auto mb-4">PROYECTOS</h2>
+<article class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-between -px-[4rem]">
   {
     PROJECTS.map(({ title, description, link, github, image, tags }) => (
-      <section class="w-full border-2 border-[#560000] rounded-xl ">
+      <section class="w-full border-2 border-[#560000] rounded-xl flex flex-col justify-between overflow-hidden">
         <figure class="border-b-2 border-[#560000]">
           <img
             class="w-full rounded-tr-lg rounded-tl-lg"
-            src="src/components/images/ProjectInbay.webp"
+            src={image}
             alt="Captura de la web de la pasteleria"
           />
         </figure>
-        <div class="w-full">
+        <div class="w-full flex-1">
           <h3 class=" pl-5 pt-2 font-black text-2xl">{title}</h3>
-          <p class="pl-5 pt-2 ">{description}</p>
+          <p lang="es" class=" px-5 pt-2 text-sm text-pretty text-black/70">{description}</p>
 
-          <ul class="flex flex-wrap flex-row content-end gap-1 w-full justify-center mt-6 mb-4">
+          <ul class="flex flex-wrap flex-row content-end items-end gap-1 w-full justify-center mt-6 mb-4 px-1">
             {tags.map((tag) => (
               <li>
                 <span
-                  class={`flex items-center rounded-full inset-shadow-sm px-2 py-1 gap-x-2 text-xs ${tag.class}`}
+                  class={`flex items-center rounded-full px-2 py-1 gap-x-2 text-xs ${tag.class}`}
                 >
                   <tag.icon />
                   <p class="pt-1">{tag.name}</p>
@@ -92,16 +123,20 @@ const PROJECTS = [
             ))}
           </ul>
         </div>
-        <ul class="flex flex-wrap w-full border-t-2 divide-dashed border-[#560000]">
-          <li class="w-1/2 px-3 py-2 flex items-center justify-center gap-4 border-r-2 border-[#560000] hover:scale-105 transition duration-200">
-            <a href={github}>Ir al Github</a>
-            <Github_SinBorde />
-          </li>
-          <li class="w-1/2 px-3 py-2 flex items-center justify-center gap-4 hover:scale-105 transition duration-200">
-            <a href={link}>
-              <span class="">Ir a la Web</span>
+        <ul class=" text-center flex w-full border-t-2  border-[#560000]">
+          <li class="w-1/2 px-3 py-2 flex items-center  justify-center gap-4  hover:scale-105 transition duration-200">
+            <a href={github} target="_blank">
+              Ir al Github
             </a>
             <Github_SinBorde />
+          </li>
+          <div class="w-px border-1 border-[#560000]" />
+
+          <li class="w-1/2 px-3 py-2 flex items-center justify-center gap-4 hover:scale-105 transition duration-200">
+            <a href={link} target="_blank">
+              <span class="">Ir a la Web</span>
+            </a>
+            <ArrowUpRight />
           </li>
         </ul>
       </section>
