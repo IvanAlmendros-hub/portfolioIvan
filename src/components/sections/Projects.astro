@@ -61,7 +61,8 @@ const PROJECTS = [
       "Desarrollo de un sitio web corporativo para una pastelería artesanal, con información sobre productos, servicios y contacto. Proyecto de fin de grado de DAW orientado a clientes reales.",
     link: "https://proyectopasteleriainbay.bsite.net/",
     github: "https://github.com/IviCracker/TFG_Pasteleria_Inbay",
-    image: "src/components/images/ProjectInbay.webp",
+    image: "/images/ProjectInbay.webp",
+    alt: "Captura de la web",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.NET, TAGS.JavaScript, TAGS.CSharp],
   },
   {
@@ -70,25 +71,28 @@ const PROJECTS = [
       "Simulador de tráfico en formato videojuego, diseñado para ayudar a usuarios a familiarizarse con las normas de conducción. Desarrollado en Unity como proyecto de fin de grado de DAM.",
     link: "https://itch.io/dashboard",
     github: "https://github.com/IviCracker/Traffic_Simulator",
-    image: "src/components/images/ProyectoTrafficSim.webp",
+    image: "/images/ProyectoTrafficSim.webp",
+    alt: "Captura del videojuego",
     tags: [TAGS.Unity, TAGS.CSharp],
   },
   {
     title: "Biblioteca League Of Legends",
     description:
       "Aplicación web que muestra información detallada de todos los campeones del juego utilizando una API externa. Proyecto enfocado al aprendizaje e integración de APIs REST.",
-    link: "https://proyectopasteleriainbay.bsite.net/",
+    link: "https://biblioteca-lol.netlify.app/",
     github: "https://github.com/IviCracker/LeagueOfLegendsLibrary",
-    image: "src/components/images/ProyectoBibliotecaLOL.webp",
+    image: "/images/ProyectoBibliotecaLOL.webp",
+    alt: "Captura de la web",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
   },
   {
   title: "Mi Portfolio",
   description:
     "Sitio web personal desarrollado con Astro y Tailwind CSS. Presenta proyectos destacados con un diseño responsive y optimizado para rendimiento. Enfocado en la experiencia de usuario y buenas prácticas de desarrollo frontend.",
-  link: "https://tu-enlace.com",
+  link: "https://ivan-almendros.netlify.app/",
   github: "https://github.com/IviCracker/MiPortfolio",
-  image: "src/components/images/PortfolioImg.webp",
+  image: "/images/PortfolioImg.webp",
+  alt: "Captura de la web",
   tags: [TAGS.Astro, TAGS.Tailwind],
 }
 ];
@@ -97,13 +101,13 @@ const PROJECTS = [
 <h2 class="text-2xl text-[#A63446] w-full font-bold mt-14  max-w-[900px] mx-auto mb-4">PROYECTOS</h2>
 <article class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-between -px-[4rem]">
   {
-    PROJECTS.map(({ title, description, link, github, image, tags }) => (
+    PROJECTS.map(({ title, description, link, github, image, alt, tags }) => (
       <section class="w-full border-2 border-[#560000] rounded-xl flex flex-col justify-between overflow-hidden">
         <figure class="border-b-2 border-[#560000]">
           <img
             class="w-full rounded-tr-lg rounded-tl-lg"
             src={image}
-            alt="Captura de la web de la pasteleria"
+            alt={alt}
           />
         </figure>
         <div class="w-full flex-1">
