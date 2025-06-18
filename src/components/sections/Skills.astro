@@ -22,6 +22,7 @@ import GitLabIcon from "@/icons/GitLabIcon.astro";
 import SourcegraphIcon from "@/icons/SourcegraphIcon.astro";
 import JiraIcon from "@/icons/JiraIcon.astro";
 import ConfluenceIcon from "@/icons/ConfluenceIcon.astro";
+import SQLServerIcon from "@/icons/SQLServerIcon.astro";
 
 const TAGS = {
   // FRONTEND
@@ -38,10 +39,11 @@ const TAGS = {
   // LENGUAJES ADICIONALES
   Java: { name: "Java", icon: JavaIcon },
   Kotlin: { name: "Kotlin", icon: KotlinIcon },
-  VBA: { name: "VB", icon: VBIcon },
+  VBA: { name: "Visual Basic", icon: VBIcon },
 
   // BASES DE DATOS
   SQL: { name: "SQL", icon: SQLIcon },
+  SQLServer:{name: "SQL Server", icon: SQLServerIcon},
 
   // VIDEOJUEGOS
   Unity: { name: "Unity", icon: UnityIcon },
@@ -69,12 +71,12 @@ const SOFTSKILLS = [
 ---
 
 <article id="Habilidades">
-  <h2 class="text-2xl text-[#A63446] w-full font-bold mt-14 mb-4">
+  <h2 class="text-2xl text-[#A63446] w-full font-bold mt-14 ">
     Habilidades
   </h2>
-  <h3 class="pt-2 font-black text-lg mt-4 mb-1">Técnicas</h3>
+  <h3 class="pt-2 font-black text-lg mb-1">Técnicas</h3>
 
-  <div class="flex flex-wrap gap-4">
+  <div class="flex flex-wrap justify-stretch gap-4">
     {
       Object.values(TAGS).map((tag) => (
         <div
@@ -84,18 +86,18 @@ const SOFTSKILLS = [
             <tag.icon />
           </div>
 
-          <span class="text-sm">{tag.name}</span>
+          <span class="text-xs">{tag.name}</span>
         </div>
       ))
     }
   </div>
   <h3 class="pt-2 font-black text-lg mt-4 ">Blandas</h3>
 
-  <div class="flex flex-wrap gap-4 mb-20">
+  <div class="flex flex-wrap justify-stretch gap-4 mb-20">
     {
       SOFTSKILLS.map((skill) => (
         <div class="flex items-center gap-1 px-2 py-2 rounded-lg  bg-[#edeae6]">
-          <span class="text-sm">{skill}</span>
+          <span class="text-xs">{skill}</span>
         </div>
       ))
     }
