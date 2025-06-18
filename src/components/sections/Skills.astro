@@ -1,0 +1,103 @@
+---
+import HtmlIcon from "@/icons/HTMLIcon.astro";
+import CSSIcon from "@/icons/CSSIcon.astro";
+import JavaScriptIcon from "@/icons/JavaScriptIcon.astro";
+import AstroIcon from "@/icons/AstroIcon.astro";
+import TailwindIcon from "@/icons/TailwindIcon.astro";
+
+import NETIcon from "@/icons/NETIcon.astro";
+import CSharpIcon from "@/icons/CSharpIcon.astro";
+
+import JavaIcon from "@/icons/JavaIcon.astro";
+import KotlinIcon from "@/icons/KotlinIcon.astro";
+import VBIcon from "@/icons/VBIcon.astro";
+
+import SQLIcon from "@/icons/SQLIcon.astro";
+
+import UnityIcon from "@/icons/UnityIcon.astro";
+
+import GitIcon from "@/icons/GitIcon.astro";
+import GitHubIcon from "@/icons/GitHubIcon.astro";
+import GitLabIcon from "@/icons/GitLabIcon.astro";
+import SourcegraphIcon from "@/icons/SourcegraphIcon.astro";
+import JiraIcon from "@/icons/JiraIcon.astro";
+import ConfluenceIcon from "@/icons/ConfluenceIcon.astro";
+
+const TAGS = {
+  // FRONTEND
+  HTML: { name: "HTML", icon: HtmlIcon },
+  CSS: { name: "CSS", icon: CSSIcon },
+  JavaScript: { name: "JavaScript", icon: JavaScriptIcon },
+  Astro: { name: "Astro", icon: AstroIcon },
+  Tailwind: { name: "Tailwind CSS", icon: TailwindIcon },
+
+  // BACKEND / FULLSTACK
+  CSharp: { name: "C#", icon: CSharpIcon },
+  NET: { name: "ASP.NET", icon: NETIcon },
+
+  // LENGUAJES ADICIONALES
+  Java: { name: "Java", icon: JavaIcon },
+  Kotlin: { name: "Kotlin", icon: KotlinIcon },
+  VBA: { name: "VB", icon: VBIcon },
+
+  // BASES DE DATOS
+  SQL: { name: "SQL", icon: SQLIcon },
+
+  // VIDEOJUEGOS
+  Unity: { name: "Unity", icon: UnityIcon },
+
+  // HERRAMIENTAS
+  Confluence: { name: "Confluence", icon: ConfluenceIcon },
+  Git: { name: "Git", icon: GitIcon },
+  GitHub: { name: "GitHub", icon: GitHubIcon },
+  GitLab: { name: "GitLab", icon: GitLabIcon },
+  Jira: { name: "Jira", icon: JiraIcon },
+  Sourcegraph: { name: "Sourcegraph", icon: SourcegraphIcon },
+};
+
+const SOFTSKILLS = [
+  "Aprendizaje continuo",
+  "Autonomía en el aprendizaje",
+  "Adaptabilidad al cambio",
+  "Trabajo en Equipo",
+  "Proactividad",
+  "Resolutivo",
+  "Actitud positiva",
+  "Trato cercano"
+  
+];
+---
+
+<article id="Habilidades">
+  <h2 class="text-2xl text-[#A63446] w-full font-bold mt-14 mb-4">
+    Habilidades
+  </h2>
+  <h3 class="pt-2 font-black text-lg mt-4 mb-1">Técnicas</h3>
+
+  <div class="flex flex-wrap gap-4">
+    {
+      Object.values(TAGS).map((tag) => (
+        <div
+          class={`flex items-center gap-1 px-2 py-2 rounded-lg  bg-[#edeae6]`}
+        >
+          <div>
+            <tag.icon />
+          </div>
+
+          <span class="text-sm">{tag.name}</span>
+        </div>
+      ))
+    }
+  </div>
+  <h3 class="pt-2 font-black text-lg mt-4 ">Blandas</h3>
+
+  <div class="flex flex-wrap gap-4 mb-20">
+    {
+      SOFTSKILLS.map((skill) => (
+        <div class="flex items-center gap-1 px-2 py-2 rounded-lg  bg-[#edeae6]">
+          <span class="text-sm">{skill}</span>
+        </div>
+      ))
+    }
+  </div>
+</article>

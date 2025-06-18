@@ -10,7 +10,6 @@ import UnityIcon from "@/icons/UnityIcon.astro";
 import AstroIcon from "@/icons/AstroIcon.astro";
 import TailwindIcon from "@/icons/TailwindIcon.astro";
 
-
 const TAGS = {
   HTML: {
     name: "HTML",
@@ -42,7 +41,7 @@ const TAGS = {
     class: "bg-[#a179dc]/60",
     icon: CSharpIcon,
   },
-   Astro: {
+  Astro: {
     name: "Astro",
     class: "bg-[#ff5d01]/50",
     icon: AstroIcon, // Asegúrate de tener AstroIcon importado
@@ -69,7 +68,7 @@ const PROJECTS = [
     title: "Traffic Simulator TFG",
     description:
       "Simulador de tráfico en formato videojuego, diseñado para ayudar a usuarios a familiarizarse con las normas de conducción. Desarrollado en Unity como proyecto de fin de grado de DAM.",
-    link: "https://itch.io/dashboard",
+    link: "https://ivicracker.itch.io/traffic-simulator-tfg",
     github: "https://github.com/IviCracker/Traffic_Simulator",
     image: "/images/ProyectoTrafficSim.webp",
     alt: "Captura del videojuego",
@@ -85,65 +84,63 @@ const PROJECTS = [
     alt: "Captura de la web",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
   },
-  {
-  title: "Mi Portfolio",
-  description:
-    "Sitio web personal desarrollado con Astro y Tailwind CSS. Presenta proyectos destacados con un diseño responsive y optimizado para rendimiento. Enfocado en la experiencia de usuario y buenas prácticas de desarrollo frontend.",
-  link: "https://ivan-almendros.netlify.app/",
-  github: "https://github.com/IviCracker/portfolioIvan",
-  image: "/images/PortfolioImg.webp",
-  alt: "Captura de la web",
-  tags: [TAGS.Astro, TAGS.Tailwind],
-}
 ];
 ---
 
-<h2 class="text-2xl text-[#A63446] w-full font-bold mt-14  max-w-[900px] mx-auto mb-4">PROYECTOS</h2>
-<article class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-between -px-[4rem]">
-  {
-    PROJECTS.map(({ title, description, link, github, image, alt, tags }) => (
-      <section class="w-full border-2 border-[#560000] rounded-xl flex flex-col justify-between overflow-hidden">
-        <figure class="border-b-2 border-[#560000]">
-          <img
-            class="w-full rounded-tr-lg rounded-tl-lg"
-            src={image}
-            alt={alt}
-          />
-        </figure>
-        <div class="w-full flex-1">
-          <h3 class=" pl-5 pt-2 font-black text-2xl">{title}</h3>
-          <p lang="es" class=" px-5 pt-2 text-sm text-pretty text-black/70">{description}</p>
+<article id="Proyectos">
+  <h2
+    class="text-2xl text-[#A63446] w-full font-bold mt-14 max-w-[900px] mx-auto mb-4"
+  >
+    PROYECTOS
+  </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-between -px-[4rem]">
+    {
+      PROJECTS.map(({ title, description, link, github, image, alt, tags }) => (
+        <section class="w-full border-2 border-[#560000] rounded-xl flex flex-col justify-between overflow-hidden">
+          <figure class="border-b-2 border-[#560000]">
+            <img
+              class="w-full rounded-tr-lg rounded-tl-lg"
+              src={image}
+              alt={alt}
+            />
+          </figure>
+          <div class="w-full flex-1">
+            <h3 class=" pl-5 pt-2 font-black text-xl">{title}</h3>
+            <p lang="es" class=" px-5 pt-2 text-sm text-pretty text-black/70">
+              {description}
+            </p>
 
-          <ul class="flex flex-wrap flex-row content-end items-end gap-1 w-full justify-center mt-6 mb-4 px-1">
-            {tags.map((tag) => (
-              <li>
-                <span
-                  class={`flex items-center rounded-full px-2 py-1 gap-x-2 text-xs ${tag.class}`}
-                >
-                  <tag.icon />
-                  <p class="pt-1">{tag.name}</p>
-                </span>
-              </li>
-            ))}
+            <ul class="flex flex-wrap flex-row content-end items-end gap-1 w-full justify-center mt-6 mb-4 px-1">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex items-center rounded-full px-2 py-1 gap-x-2 text-xs ${tag.class}`}
+                  >
+                    <tag.icon />
+                    <p class="pt-1">{tag.name}</p>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <ul class=" text-center flex w-full border-t-2  border-[#560000]">
+            <li class="w-1/2 px-3 py-2 flex items-center  justify-center gap-4  hover:scale-105 transition duration-200">
+              <a href={github} target="_blank">
+                Ir al Github
+              </a>
+              <Github_SinBorde />
+            </li>
+            <div class="w-px border-1 border-[#560000]" />
+
+            <li class="w-1/2 px-3 py-2 flex items-center justify-center gap-4 hover:scale-105 transition duration-200">
+              <a href={link} target="_blank">
+                <span class="">Ir a la Web</span>
+              </a>
+              <ArrowUpRight />
+            </li>
           </ul>
-        </div>
-        <ul class=" text-center flex w-full border-t-2  border-[#560000]">
-          <li class="w-1/2 px-3 py-2 flex items-center  justify-center gap-4  hover:scale-105 transition duration-200">
-            <a href={github} target="_blank">
-              Ir al Github
-            </a>
-            <Github_SinBorde />
-          </li>
-          <div class="w-px border-1 border-[#560000]" />
-
-          <li class="w-1/2 px-3 py-2 flex items-center justify-center gap-4 hover:scale-105 transition duration-200">
-            <a href={link} target="_blank">
-              <span class="">Ir a la Web</span>
-            </a>
-            <ArrowUpRight />
-          </li>
-        </ul>
-      </section>
-    ))
-  }
+        </section>
+      ))
+    }
+  </div>
 </article>
