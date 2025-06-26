@@ -80,7 +80,7 @@ const SOFTSKILLS = [
     {
       Object.values(TAGS).map((tag) => (
         <div
-          class={`flex items-center gap-1 px-2 py-2 rounded-lg  bg-[#edeae6]`}
+          class={`flex items-center gap-1 px-2 py-2 rounded-lg shadow-sm hover:scale-105 transition duration-100  bg-[#edeae6]`}
         >
           <div>
             <tag.icon />
@@ -96,7 +96,7 @@ const SOFTSKILLS = [
   <div class="flex flex-wrap justify-stretch gap-4 mb-20">
     {
       SOFTSKILLS.map((skill) => (
-        <div class="flex items-center gap-1 px-2 py-2 rounded-lg  bg-[#edeae6]">
+        <div class="flex items-center gap-1 px-2 py-2 rounded-lg shadow-sm hover:scale-105 transition duration-100 bg-[#edeae6]">
           <span class="text-xs">{skill}</span>
         </div>
       ))
